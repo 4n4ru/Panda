@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}" type="text/css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/clean-blog.min.css') }}" type="text/css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+        <title>Hello Flask</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        
+          <!-- Main Content -->
+          <div class="container">
+            {% block content %}
+            {% endblock %}
+          </div>
+        
+          <hr>
+        
+        
+          <!-- Bootstrap core JavaScript -->
+          <script src="{{url_for('static', filename='vendor/jquery/jquery.min.js') }}"></script>
+          <script src="{{url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        
+          <!-- Custom scripts for this template -->
+          <script src="{{url_for('static', filename='js/clean-blog.min.js') }}"></script>
+          <script>
+              $('#copyright').text(new Date().getFullYear());
+          </script>
+        
+    </body>
+</html>
