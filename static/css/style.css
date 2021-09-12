@@ -6,6 +6,16 @@ h4 {
   color: var(--bs-primary);
 }
 
+.profile-header {
+  color: var(--bs-primary);
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.profile-title {
+  font-weight: 600;
+}
+
 /*  navigation bar  */
 .logo-name {
   font-size: 1.5rem;
