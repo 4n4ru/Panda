@@ -23,6 +23,31 @@ def companies():
     return render_template("companies.html")
 
 
+@app.route("/signup", methods=["GET", "POST"])
+def signup():
+    # Check if a username exists
+    if request.method == "POST":
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            flash("Username is already taken")
+            return redirect(url_for('register'))
+
+        register = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password"))
+        }
+        mongo.db.users.insert_one(register)
+
+        # put the new user into session
+        session["user"] = request.form.get("username").lower()
+        flash("Registration Successful")
+        return redirect(url_for("profile", username=session["user"]))
+
+    return render_template("register.html")
+
+
 @app.route('/createProfile', methods=["GET", "POST"])
 def create_profile():
     return render_template("sign-up.html")
@@ -51,4 +76,6 @@ def create_profile():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host=os.environ.get("IP"),
+            port=int(os.environ.get("PORT")),
+            debug=True)
