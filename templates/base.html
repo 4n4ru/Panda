@@ -16,6 +16,28 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
+
+        <header>
+            <!-- header taken with help from material bootstrap -->
+            <nav class="nav-extended recipedia-text nav-design">
+                <div class="nav-wrapper">
+                    <a href="{{ url_for('home')}}" class="recipedia-logo brand-logo">Panda</a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="{{ url_for('home')}}" class="menu-items recipedia-text">Home</a></li>
+                        <li><a href="{{ url_for('companies') }}" class="menu-items recipedia-text">Companies</a></li>
+                        <li><a href="{{ url_for('create_profile') }}" class="menu-items recipedia-text">Create a Company Profile</a></li>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+    
+            <!-- sidenav -->
+            <ul class="sidenav" id="mobile-demo">
+                <li><a href="{{ url_for('home')}}" class="menu-items recipedia-text">Home</a></li>
+                <li><a href="{{ url_for('companies') }}" class="menu-items recipedia-text">Companies</a></li>
+                <li><a href="{{ url_for('create_profile') }}" class="menu-items recipedia-text">Create a Company Profile</a></li>
+            </ul>
+        </header>
         
           <!-- Main Content -->
           <div class="container">
