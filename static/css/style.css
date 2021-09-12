@@ -1,3 +1,11 @@
-body{
-    background-color: red;
+/*  navigation bar  */
+.logo-name {
+  font-size: 1.5rem;
+  line-height: 1;
+  font-weight: 800;
+  color: var(--bs-primary);
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: var(--bs-primary);
 }

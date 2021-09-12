@@ -1,0 +1,1 @@
+$('#copyright').text(new Date().getFullYear());

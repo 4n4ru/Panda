@@ -25,6 +25,7 @@ def companies():
 
 @app.route('/createProfile', methods=["GET", "POST"])
 def create_profile():
+    return render_template("sign-up.html")
 
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
@@ -46,7 +47,7 @@ def create_profile():
         return redirect(url_for("profile", username=session["user"]))
 
     return render_template("register.html")
-    return render_template("createProfile.html")
+    return render_template("sign-up.html")
 
 
 if __name__ == "__main__":
