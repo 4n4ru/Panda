@@ -79,6 +79,17 @@ def create_profile():
     return render_template("register.html")
     return render_template("sign-up.html")
 
+@app.route('/create-profile')
+def create_new_profile():
+    return render_template("create-profile.html")
+
+    
+@app.route("/logout")
+def logout():
+    flash("You have been logged out.")
+    session.pop("user")
+    return redirect(url_for("login"))
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
