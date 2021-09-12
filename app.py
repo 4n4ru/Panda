@@ -17,7 +17,7 @@ def companies():
 
 @app.route('/createProfile', methods=["GET", "POST"])
 def create_profile():
-    return render_template("createProfile.html")
+    return render_template("sign-up.html")
 
 
 if __name__ == "__main__":
