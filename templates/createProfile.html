@@ -1,0 +1,192 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row">
+    <h1>Company Details</h1>
+    <h2>Please enter your company details</h2>
+</div>
+
+
+<div class="row">
+    <!-- Company details form -->
+    <form class="col s12 m8 offset-m2">
+        <div class="card-panel">
+            <!-- Name -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <!-- Maybe an icon to go here? -->
+                    <label for="Name">Name: *</label>
+                    <input id="Name" name="Name" type="Text" minlength="5" maxlength="30" class="validate" required>   
+                </div>
+            </div>
+            <!-- username -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <label for="username">Username: </label>
+                    <input id="username" name="username" type="text" minlength="5" maxlength="15"
+                        pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>    
+                </div>
+            </div>
+            <!-- Password -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <label for="password">Password: </label>
+                    <input id="password" name="password1" type="password1" minlength="5" maxlength="15"
+                        pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                    
+                </div>
+            </div>
+            <!-- Repeat Password -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <label for="password">Repeat Password: </label>
+                    <input id="password" name="password2" type="password2" minlength="5" maxlength="15"
+                        pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>   
+                </div>
+            </div>
+            <!-- Company / Org -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <label for="company_name">Company / Org: </label>
+                    <input id="company_name" name="company_name" type="text" minlength="5" maxlength="15"
+                     class="validate" required>    
+                </div>
+            </div>
+            <!-- Company Address -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <label for="company_name">Company Address: </label>
+                    <input id="company_name" name="company_name" type="text" minlength="5" maxlength="15"
+                     class="validate">    
+                </div>
+            </div>
+            <!-- Company Website -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <label for="company_website">Company Website: </label>
+                    <input id="company_website" name="company_website" type="text" minlength="5" maxlength="15"
+                     class="validate" required>    
+                </div>
+            </div>
+            <!-- Industry -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <label for="company_industry">Industry: </label>
+                    <input id="company_industry" name="company_industry" type="text" minlength="5" maxlength="15"
+                     class="validate">    
+                </div>
+            </div>
+            <!-- Organisation size -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <label for="org_size">Organisation Size: </label>
+                    <select name="cars" id="cars">
+                        <option value="small">2-50</option>
+                        <option value="medium">51-100</option>
+                        <option value="large">101-1000</option>
+                        <option value="extraLarge">1000+</option>
+                      </select>   
+                </div>
+            </div>
+            
+        </div>
+    </form>
+</div>
+
+<br>
+
+<div class="row">
+    <!-- Entrance and exits form -->
+    <form>
+        <label for="ee">Entrance and Exits: </label>
+        <input type="checkbox" id="ee1" name="ee1" value="Glass Door">
+        <label for="ee1"> Glass Door</label><br>
+        <input type="checkbox" id="ee2" name="ee2" value="Wide Doorway">
+        <label for="ee2"> Wide doorway</label><br>
+        <input type="checkbox" id="ee3" name="ee3" value="Ramp Access">
+        <label for="ee3"> Ramp access</label><br>
+        <input type="checkbox" id="ee4" name="ee4" value="Receptions">
+        <label for="ee4"> Receptions</label><br> 
+      </form>  
+</div>
+
+<br>
+ 
+<div class="row">
+    <!-- Facilities form -->
+    <form>
+        <label for="fac">Facilities: </label>
+        <input type="checkbox" id="fac1" name="fac1" value="Co-Working space available with other companines">
+        <label for="fac1"> Co-Working space available with other companines</label><br>
+        <input type="checkbox" id="fac2" name="fac2" value="Wide Doorway">
+        <label for="fac2"> Shared toliet facilities for entire floor. Inc emergency pull cord.
+        </label><br>
+        <input type="checkbox" id="fac3" name="fac3" value="Ramp Access">
+        <label for="fac3"> Social garden area. </label><br>
+        <input type="checkbox" id="fac4" name="fac4" value="Receptions">
+        <label for="fac4"> Ground floor canteen.</label><br> 
+      </form>  
+</div>
+
+<br>
+
+<div class="row">
+    <!-- Assistiveness: form -->
+    <form>
+        <label for="assist">Assistiveness: </label>
+        <input type="checkbox" id="assist1" name="assist1" value="Screen reading software">
+        <label for="assist1"> Screen reading software </label><br>
+        <input type="checkbox" id="assist2" name="assist2" value="Captioning available at meetings">
+        <label for="assist2"> Captioning available at meetings</label><br>
+      </form>  
+</div>
+
+<br>
+
+<div class="row">
+    <!-- Special equipment form -->
+    <form>
+        <label for="assist">Special equipment: </label>
+        <input type="checkbox" id="spec1" name="spec1" value="Height adjustable desks and chairs">
+        <label for="spec1"> Height adjustable desks and chairs </label><br>
+      </form>  
+</div>
+
+<br>
+
+<div class="row">
+    <!-- Visual, hearing & sensory form -->
+    <form>
+        <label for="assist">Visual, hearing & sensory: </label>
+        <input type="checkbox" id="spec1" name="spec1" value="Adjustable lighting">
+        <label for="spec1"> Adjustable lighting </label><br>
+        <input type="checkbox" id="spec2" name="spec2" value="Quiet room on site">
+        <label for="spec2"> Quiet room on site</label><br>
+      </form>  
+</div>
+
+
+<br>
+
+<div class="row">
+    <!-- Working flexibility  form -->
+    <form>
+        <label for="assist">Working flexibility : </label>
+        <input type="checkbox" id="spec1" name="spec1" value="Flexible working hours">
+        <label for="spec1"> Flexible working hours </label><br>
+        <input type="checkbox" id="spec2" name="spec2" value="Remote work possible">
+        <label for="spec2"> Remote work possible</label><br>
+        <input type="checkbox" id="spec3" name="spec3" value="Zoom meeting with transcription tech. ">
+        <label for="spec3"> Zoom meeting with transcription tech. </label><br>
+      </form>  
+</div>
+
+<!-- register button -->
+<div class="row">
+    <button type="submit" class="col s12 btn-large light-blue darken-4 text-shadow">
+        Register <i class="fas fa-sign-in-alt"></i>
+    </button>
+</div>
+
+
+{% endblock %}
