@@ -43,11 +43,11 @@ def signup():
 
         register = {
             "username": request.form.get("username").lower(),
-            "email": request.form.get("email").lower(),
+            "email": request.form.get("email"),
             "password": generate_password_hash(request.form.get("password")),
-            "companyName": request.form.get("companyName").lower(),
-            "companyAddress": request.form.get("companyAddress").lower(),
-            "companyWebsite": request.form.get("companyWebsite").lower()
+            "companyName": request.form.get("companyName"),
+            "companyAddress": request.form.get("companyAddress"),
+            "companyWebsite": request.form.get("companyWebsite")
         }
         mongo.db.Users.insert_one(register)
         session["user"] = request.form.get("username").lower()
