@@ -144,13 +144,13 @@ def login():
             else:
                 # if password doesn't match
                 flash("Incorrect Username and/or Password, Please try again")
-                return redirect(url_for("home") + '#logInModal')
+                return redirect(url_for("home"))
         else:
             # username does not exist
             flash("Incorrect Username and/or Password, Please try again")
-            return redirect(url_for("home") + '#logInModal')
+            return redirect(url_for("home"))
 
-    return render_template("index.html" + '#logInModal')
+    return render_template("login.html")
 
 
 @app.route("/logout")
