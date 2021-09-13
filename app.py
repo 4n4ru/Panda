@@ -170,6 +170,14 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+@app.route('/companies/<company_name>')
+def company_profile(company_name):
+    company = mongo.db.companies.find_one(
+        {'companyName': company_name}
+    )
+    return render_template('profile.html', company=company)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
