@@ -50,18 +50,21 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url_for('companies') }}">Companies</a>
                         </li>
+                        {% if session.user %}
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url_for('create_profile') }}">Create Profile</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url_for('logout') }}">Log Out</a>
                         </li>
+                        {% else %}
                         <li class="nav-item">
                             <div class="nav-link login-modal" data-bs-toggle="modal" data-bs-target="#logInModal">Log In</div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url_for('signup')}}">Sign Up</a>
                         </li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
@@ -123,7 +126,7 @@
                 </div>
                 <div class="modal-body">
                     <form id="logInForm" class="my-3" aria-label="Log in form">
-                        <input class="form-control mb-2" type="email" name="emailLogIn" id="emailLogIn" aria-label="Email address" placeholder="Email &#42;" required>
+                        <input class="form-control mb-2" type="text" name="username" id="username" aria-label="Email address" placeholder="Username &#42;" required>
                         <input class="form-control mb-2" type="password" name="password" id="password" aria-label="Password" placeholder="Password &#42;" required>
                         <button type="submit" class="btn btn-primary" role="button">Log In</button>
                     </form>
