@@ -1,7 +1,7 @@
 # Panda Project
 ## Introduction
 This is a team project as part of Code Institue's Hackathon in collaboration with [Trust in SODA](https://www.trustinsoda.com/). The theme of the hackathon is *Building an Accessible Workplace*.
-Team members: Thanh Cao, Adrian Looney, Brian Connelly, Ana Runje, Allen Rahbar.
+Team members: Thanh Cao, Adrian Looney, Brian Connolly, Ana Runje, Allen Rahbar.
 ## UX Design
 ### User Stories
 * As a company, I want to be able to sign up / log in / log out

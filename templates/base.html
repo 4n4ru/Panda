@@ -50,21 +50,18 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url_for('companies') }}">Companies</a>
                         </li>
-                        {% if session.user %}
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url_for('create_profile') }}">Create Profile</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url_for('logout') }}">Log Out</a>
                         </li>
-                        {% else %}
                         <li class="nav-item">
                             <div class="nav-link login-modal" data-bs-toggle="modal" data-bs-target="#logInModal">Log In</div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url_for('signup')}}">Sign Up</a>
                         </li>
-                        {% endif %}
                     </ul>
                 </div>
             </div>

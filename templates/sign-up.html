@@ -9,13 +9,10 @@
                 <div><img src="{{ url_for('static', filename='img/panda-project-logo.png') }}" alt="Panda Project logo" height="60" class="d-inline-block ms-3 align-text-top"></div>
             </div>
             <div class="card-body">
-                <form>
+                <form action="{{ url_for('signup') }}" method="POST">
                     <div class="row mb-3">
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="First name" aria-label="First name" name="firstName">
-                        </div>
-                        <div class="col">
-                            <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" name="lastName">
+                            <input type="text" class="form-control" placeholder="Username" aria-label="First name" name="username">
                         </div>
                     </div>
 
@@ -57,7 +54,7 @@
                         </div>
                     </div>
 
-                    <select class="form-select" aria-label="Company size">
+                    <select class="form-select" aria-label="Company size" name="companySize">
                         <option selected>Company size</option>
                         <option value="small" aria-label="one to ten peole">1 - 10</option>
                         <option value="medium" aria-label="eleven to fifty people">11-50</option>
