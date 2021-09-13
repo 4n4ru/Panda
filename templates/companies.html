@@ -1,10 +1,34 @@
 {% extends "base.html" %}
 {% block content %}
-    
-    {% for company in companies %}
-    <h1>{{ company.name }}</h1>
-    {% endfor %}
 
+<section>
+    <div class="container text-center d-flex flex-column justify-content-center align-items-stretch px-4 pt-4 h-100">
+        <form class="d-flex pb-1" id="search-companies">
+            <input class="form-control me-2" type="search" placeholder="Type a company, industry, region"
+                aria-label="Search">
+            <button class="btn btn-outline-primary" type="submit">Search</button>
+        </form>
+        <p class="search-results px-2 mb-0 text-start"><span id="num-results">10</span> results found</p>
+    </div>
+</section>
+
+{% for company in companies %}
+<section class="company-list mt-3">
+    <hr>
+    <div class="row mx-2 px-md-3 d-flex align-items-center">
+        <div class="col-3">
+            <img src="{{ company.logo }}" class="img-thumbnail rounded w-100" alt="{{ company.name }} logo">
+        </div>
+        <div class="col-9">
+            <p class="company-name">{{ company.name }}</p>
+            <p class="company-address">{{ company.address }}</p>
+            <p class="company-size">{{ company.size }}</p>
+            <p class="industry">{{ company.industry }}</p>
+        </div>
+    </div>
+    <hr>
     
+    {% endfor %}
+</section>
 
 {% endblock %}
