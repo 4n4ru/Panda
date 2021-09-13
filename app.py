@@ -26,7 +26,7 @@ def home():
 
 @app.route('/companies')
 def companies():
-    companies = list(mongo.db.companies.find())
+    companies = list(mongo.db.Users.find())
     return render_template("companies.html", companies=companies)
 
 
@@ -121,7 +121,7 @@ def create_profile():
         }
         mongo.db.companies.insert_one(profile)
         flash('Profule successfully created')
-        return redirect(url_for('profile', username=session['user']))
+        return redirect(url_for('company_profile', username=session['user']))
     return render_template("create-profile.html", username=username)
 
 
@@ -172,7 +172,7 @@ def profile(username):
 
 @app.route('/companies/<company_name>')
 def company_profile(company_name):
-    company = mongo.db.companies.find_one(
+    company = mongo.db.Users.find_one(
         {'companyName': company_name}
     )
     return render_template('profile.html', company=company)
