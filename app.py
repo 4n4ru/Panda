@@ -92,7 +92,7 @@ def create_new_profile():
 def login():
     if request.method == "POST":
         # Check if a user exists
-        existing_user = mongo.db.users.find_one(
+        existing_user = mongo.db.Users.find_one(
             {"username": request.form.get("username").lower()})
 
         if existing_user:
