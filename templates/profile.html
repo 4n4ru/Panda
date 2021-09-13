@@ -2,10 +2,17 @@
 {% block content %}
 <section class="my-5 w-75 mx-auto">
     <div class="container">
-        <h1>{{username}}</h1>
+        
         <p>Broken Dreams Boulevard 11</p>
         <p>Company size:</p>
         <p>Industry</p>
+
+        <img src="{{ company.bannerImg }}" alt="{{ company.companyBannerDesc }}" class="img w-100 rounded">
+
+        <h1>{{ company.name }}</h1>
+        <p>{{ company.address }}</p>
+        <p>{{ company.size }}</p>
+        <p>{{ company.industry }}</p>
     </div>
 
     <hr>
