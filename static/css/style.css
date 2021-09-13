@@ -16,6 +16,14 @@ h4 {
   font-weight: 600;
 }
 
+.company-list div p {
+  margin-bottom: 0;
+}
+
+p.company-name {
+  color: var(--bs-primary);
+}
+
 /*  navigation bar  */
 .logo-name {
   font-size: 1.5rem;
