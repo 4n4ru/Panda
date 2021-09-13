@@ -43,11 +43,11 @@ def signup():
 
         register = {
             "username": request.form.get("username").lower(),
-            "email": request.form.get("email").lower(),
+            "email": request.form.get("email"),
             "password": generate_password_hash(request.form.get("password")),
-            "companyName": request.form.get("companyName").lower(),
-            "companyAddress": request.form.get("companyAddress").lower(),
-            "companyWebsite": request.form.get("companyWebsite").lower()
+            "companyName": request.form.get("companyName"),
+            "companyAddress": request.form.get("companyAddress"),
+            "companyWebsite": request.form.get("companyWebsite")
         }
         mongo.db.Users.insert_one(register)
         session["user"] = request.form.get("username").lower()
@@ -92,7 +92,7 @@ def create_new_profile():
 def login():
     if request.method == "POST":
         # Check if a user exists
-        existing_user = mongo.db.users.find_one(
+        existing_user = mongo.db.Users.find_one(
             {"username": request.form.get("username").lower()})
 
         if existing_user:
@@ -125,7 +125,7 @@ def logout():
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-    username = mongo.db.users.find_one(
+    username = mongo.db.Users.find_one(
         {"username": session["user"]})["username"]
     if session["user"]:
         return render_template("profile.html", username=username)
