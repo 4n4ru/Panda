@@ -121,7 +121,7 @@ def create_profile():
         }
         mongo.db.companies.insert_one(profile)
         flash('Profule successfully created')
-        return redirect(url_for('profile'))
+        return redirect(url_for('profile', username=session['user']))
     return render_template("create-profile.html", username=username)
 
 

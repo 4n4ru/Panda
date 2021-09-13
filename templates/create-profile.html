@@ -7,7 +7,7 @@
     </div>
 
     <div class="profile-creation-form card bg-light p-3">
-        <form id="profileCreationForm" action="POST">
+        <form id=“profileCreationForm” action=“{{ url_for(‘create_profile’) }}” method=“POST”>
 
             <!-- One "tab" for each step in the form: -->
             <div class="tab">
